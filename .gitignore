@@ -1,0 +1,12 @@
+utils/__pycache__/
+/input/
+.ipynb_checkpoints
+.ipynb_checkpoints/*
+/.ipynb_checkpoints
+*/.ipynb_checkpoints
+__pycache__/
+*/__pycache__/
+__pycache__/*
+/submissions/*
+/catboost_info/
+*catboost_info*
