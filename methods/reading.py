@@ -40,26 +40,26 @@ class read(object):
             self.file.write('train = pd.read_csv("{0}", sep="{1}", header=True)\n\n'.format(self.data_path + train_path,
                                                                                             separator))
 
-            self.file.write('columns = train.columns\n\n'
-                            'catergorical_cols = list()\n'
-                            'for col, dt in zip(columns, train.dtypes):\n'
-                                '\tif dt in ["O", "object"]:\n'
-                                    '\t\tcatergorical_cols.append(col)\n\n')
+        self.file.write('columns = train.columns\n\n'
+                        'catergorical_cols = list()\n'
+                        'for col, dt in zip(columns, train.dtypes):\n'
+                            '\tif dt in ["O", "object"]:\n'
+                                '\t\tcatergorical_cols.append(col)\n\n')
 
-            self.file.write('numerical_cols = '
-                            '[col for col in columns if col not in categorical_cols]\n\n')
+        self.file.write('numerical_cols = '
+                        '[col for col in columns if col not in categorical_cols]\n\n')
 
 
     def X_y_split(self, target_label='target', drop_cols=[]):
 
         self.file.write('## X, y Split ##\n\n')
         self.file.write('target_label = "{}"\n'.format(target_label))
-        self.file.write('drop_cols = \n'.format(drop_cols))
+        self.file.write('drop_cols = {}\n'.format(str(drop_cols)))
         self.file.write('y_train = train[target_label]\n')
-        self.file.write('X_train = train[x for x in train.columns if x not in target_label+drop_cols]\n')
+        self.file.write('X_train = train[[x for x in train.columns if x not in target_label+drop_cols]]\n')
         if self.separate:
             self.file.write('y_test = test[target_label]\n')
-            self.file.write('X_test = test[x for x in X_train.columns]\n')
+            self.file.write('X_test = test[[x for x in X_train.columns]]\n')
 
 
     def fit_val_train_split(self):
