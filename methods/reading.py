@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 
 class read(object):
 
@@ -64,7 +67,7 @@ class read(object):
 
     def fit_val_train_split(self):
 
-        self.file.write('## Feature Selection ##\n')
+        self.file.write('## Fit, val Split ##\n')
         self.file.write('from sklearn.model_selection import train_test_split\n\n')
         self.file.write('X_fit, X_val, y_fit, y_val = train_test_split(X_train, y_train,\n'
                        'test_size=0.25,\n'

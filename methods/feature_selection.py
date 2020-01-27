@@ -1,48 +1,38 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from .ft_selection_methods.correlation import *
+from .ft_selection_methods.permutation import *
+
 # TODO others feature selection methods like chi2, etc.
 
-class feature_selection(object):
+class feature_selection(permutation_importance, feature_correlation):
 
-    def __init__(self, file, separate):
+    def __init__(self, file, how_ft_sel):
 
         self.file = file
-        self.separate = separate
+        self.how_ft_sel = how_ft_sel
+
+        permutation_importance.__init__(self, file=self.file,)
+        feature_correlation.__init__(self, file=self.file)
 
 
-    def permutation_importance(self):
-
-        self.file.write('## Permutation Importance with RadomForest ##\n')
-        self.file.write('from sklearn.ensemble import RandomForestClassifier\n')
-        self.file.write('from eli5.sklearn import PermutationImportance\n\n')
-        self.file.write('model_rf = RandomForestClassifier(n_estimators=200, oob_score=True, n_jobs=-1, '
-                        'random_state=42, max_depth=6)\n\n'
-                        'model_rf.fit(X_fit, y_fit)\n'
-                        'perm_rf = PermutationImportance(model_rf).fit(X_val, y_val)\n\n'
-                        'df_perm = pd.DataFrame({"feature": X_fit.columns, "Importance": perm_rf.feature_importances_})'
-                        '.sort_values("Importance", ascending=False)\n'
-                        'df_perm.head()\n'
-                        '# df_imp["Importance"] = df_imp["Importance"]/df_imp["Importance"].max()\n\n'
-                        '# plt.figure(figsize=(14, 25))\n'
-                        '# sns.barplot(x="Importance", y="Feature", data=df_imp)\n'
-                        '# plt.title("Feature Importance")\n'
-                        '# plt.tight_layout()\n'
-                        '# ft_imp_path = "x"\n'
-                        '# plt.savefig(ft_imp_path + ".png")\n'
-                        '# plt.close()\n\n'
-                        '# path_out = "x"\n'
-                        '# file_name = "{0}_PermutationImportance_RF.csv".format(path_out)\n'
-                        '#df_perm.to_csv(file_name, header=True, index=None)\n\n')
+    def method_finder(self, how):
+        if how == 'permutation':
+            permutation_importance.select(self)
+        elif how == 'correlation':
+            feature_selection.select(self)
+        else:
+            raise ValueError(
+                '{} is not in the how_ft_sel list: ["permutation", "correlation"]'.format(how))
 
 
-    def feature_correlation(self):
+    def select(self):
 
-        self.file.write('## Linear Feature Correlation ##\n\n')
-        self.file.write('corr = X_fit.corr()\n\n'
-                        'list_columns_correlated = list()\n'
-                        'for i, col in enumerate(corr.columns):\n'
-                            '\tfor other_col in corr.index:\n'
-                                '\t\tif corr[col][other_col] > 0.95 and col != other_col:\n'
-                                    '\t\t\tlist_columns_correlated.append(col)\n'
-                                    '\t\t\tlist_columns_correlated.append(other_col)\n\n'
-                        'list_columns_correlated = list(set(list_columns_correlated))\n')
+        if type(self.how_ft_sel) == list:
+            for ft_met in self.how_ft_sel:
+                self.method_finder(ft_met)
+        else:
+            self.method_finder(self.how_ft_sel)
 
 
