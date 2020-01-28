@@ -13,7 +13,7 @@ class lgb(object):
         self.file.write('## LightGBM ##\n')
         self.file.write('import lightgbm as lgb\n\n')
 
-        self.file.write('params = {}'.format(str(self.params)))
+        self.file.write('params = {}\n'.format(str(self.params)))
 
         if self.mode == 'classifier':
             self.file.write('model = lgb.LGBMClassifier(**params)\n\n')

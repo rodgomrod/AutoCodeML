@@ -1,0 +1,37 @@
+{
+  "file_name": "examples/test_example.py",
+  "data_path": "datasets/",
+  "separate": "False",
+  "how_cat": "freq",
+  "how_num": "standard",
+  "how_ft_sel": "correlation",
+  "mode": "classifier",
+  "params": {
+    "num_leaves": 31,
+    "max_depth": 4,
+    "max_leaf_nodes": 10,
+    "min_sample_leaf": 20,
+    "first_metric_only": 1,
+    "n_estimators": 5000,
+    "num_threads": -1,
+    "learning_rate": 0.01,
+    "colsample_bytree": 0.6,
+    "bagging_fraction": 0.7,
+    "bagging_freq": 5,
+    "importance_type": "gain",
+    "bagging_seed": 42,
+    "random_state":42,
+    "seed": 42,
+    "feature_fraction_seed": 42,
+    "drop_seed": 42,
+    "data_random_seed": 42
+  },
+  "alg": "lgb",
+  "how_val": "sfk",
+  "train_path": "iris.data",
+  "test_path": "None",
+  "target_label": "None",
+  "drop_cols": "[]"
+}
+
+

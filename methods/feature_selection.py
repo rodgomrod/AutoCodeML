@@ -13,7 +13,7 @@ class feature_selection(permutation_importance, feature_correlation):
         self.file = file
         self.how_ft_sel = how_ft_sel
 
-        permutation_importance.__init__(self, file=self.file,)
+        permutation_importance.__init__(self, file=self.file)
         feature_correlation.__init__(self, file=self.file)
 
 
@@ -27,7 +27,7 @@ class feature_selection(permutation_importance, feature_correlation):
                 '{} is not in the how_ft_sel list: ["permutation", "correlation"]'.format(how))
 
 
-    def select(self):
+    def select_ft_method(self):
 
         if type(self.how_ft_sel) == list:
             for ft_met in self.how_ft_sel:

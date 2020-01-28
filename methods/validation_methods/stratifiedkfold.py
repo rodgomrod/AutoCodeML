@@ -16,5 +16,5 @@ class skf(object):
 
         self.file.write('skf = StratifiedKFold(n_splits=k, shuffle=True, random_state=42)\n\n')
 
-        self.file.write('fold_strategy = skf.split(X, y)\n\n')
+        self.file.write('fold_strategy = skf.split(X_train, y_train)\n\n')
 

@@ -16,5 +16,5 @@ class tss(object):
 
         self.file.write('tss = TimeSeriesSplit(n_splits=k, max_train_size=None)\n\n')
 
-        self.file.write('fold_strategy = tscv.split(X, y)\n\n')
+        self.file.write('fold_strategy = tscv.split(X_train, y_train)\n\n')
 

@@ -7,13 +7,12 @@ from .algorithms.xgboost import *
 
 class model(cat, xgb, lgb):
 
-    def __init__(self, file, mode, params, alg, validation):
+    def __init__(self, file, mode, params, alg):
 
         self.file = file
         self.mode = mode
         self.params = params
         self.alg = alg
-        self.validation = validation
 
         cat.__init__(self, file=self.file, mode=self.mode, params=self.params)
         xgb.__init__(self, file=self.file, mode=self.mode, params=self.params)

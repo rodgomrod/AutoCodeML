@@ -16,7 +16,7 @@ class xgb(object):
         self.file.write('## XGBoost ##\n')
         self.file.write('import xgboost as xgb\n\n')
 
-        self.file.write('params = {}'.format(str(self.params)))
+        self.file.write('params = {}\n'.format(str(self.params)))
 
         if self.mode == 'classifier':
             self.file.write('model = xgb.XGBClassifier(**params)\n\n')

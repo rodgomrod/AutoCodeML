@@ -18,5 +18,5 @@ class gkf(object):
         self.file.write('groups = X.groupby(group_cols).grouper.group_info[0]\n')
         self.file.write('gkf = GroupKFold(n_splits=k)\n\n')
 
-        self.file.write('fold_strategy = gkf.split(X, y, groups)\n\n')
+        self.file.write('fold_strategy = gkf.split(X_train, y_train, groups)\n\n')
 

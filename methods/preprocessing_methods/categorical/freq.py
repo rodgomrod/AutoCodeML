@@ -16,7 +16,7 @@ class freq(object):
                         '\texcept:\n'
                         '\t\treturn len(dict_freq)\n\n')
 
-        self.file.write('for col in catergorical_cols:\n'
+        self.file.write('for col in categorical_cols:\n'
                         '\tcategories = X_fit[col].value_counts().index.tolist()\n'
                         '\tdict_freq = dict()\n'
                         '\tfor i, cat in enumerate(categories):\n'
