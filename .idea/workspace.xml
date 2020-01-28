@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6729def-6b55-454b-aa2a-120dd19af34c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/test_example_conf.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datasets/iris.data" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/test_example.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/algorithms/catboost.py" beforeDir="false" afterPath="$PROJECT_DIR$/methods/algorithms/catboost.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/algorithms/lightgbm.py" beforeDir="false" afterPath="$PROJECT_DIR$/methods/algorithms/lightgbm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/algorithms/xgboost.py" beforeDir="false" afterPath="$PROJECT_DIR$/methods/algorithms/xgboost.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/feature_selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/methods/feature_selection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/modeling.py" beforeDir="false" afterPath="$PROJECT_DIR$/methods/modeling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/preprocessing_methods/categorical/freq.py" beforeDir="false" afterPath="$PROJECT_DIR$/methods/preprocessing_methods/categorical/freq.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/reading.py" beforeDir="false" afterPath="$PROJECT_DIR$/methods/reading.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/methods/validation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/validation_methods/groupkfold.py" beforeDir="false" afterPath="$PROJECT_DIR$/methods/validation_methods/groupkfold.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/validation_methods/stratifiedkfold.py" beforeDir="false" afterPath="$PROJECT_DIR$/methods/validation_methods/stratifiedkfold.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/validation_methods/timeseriessplit.py" beforeDir="false" afterPath="$PROJECT_DIR$/methods/validation_methods/timeseriessplit.py" afterDir="false" />
-    </list>
+    <list default="true" id="b6729def-6b55-454b-aa2a-120dd19af34c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580144334941</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="First basical version with Iris Dataset example">
+      <created>1580214869563</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1580214869563</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -143,17 +132,18 @@
     <MESSAGE value="First day. Init some methods. feature_selection.py, modeling.py, preprocessing.py, reading.py and visualizing.py." />
     <MESSAGE value="few modificaition, starting with algorithms." />
     <MESSAGE value="modify reading, propro, ft_Sel, modeling y validation. Initializing main file for first test" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify reading, propro, ft_Sel, modeling y validation. Initializing main file for first test" />
+    <MESSAGE value="First basical version with Iris Dataset example" />
+    <option name="LAST_COMMIT_MESSAGE" value="First basical version with Iris Dataset example" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#JSON" timestamp="1580202958014">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="70" key="#JSON/0.0.1536.824@0.0.1536.824" timestamp="1580202958014" />
-    <state x="554" y="10" key="CommitChangelistDialog2" timestamp="1580144332366">
+    <state x="484" y="10" key="CommitChangelistDialog2" timestamp="1580214867323">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="554" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1580144332366" />
+    <state x="484" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1580214867323" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1580204078907">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -194,10 +184,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1580109244670" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1580144337886">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1580214871435">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1580144337886" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1580214871435" />
     <state x="463" y="149" width="609" height="526" key="find.popup" timestamp="1580213220820">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
