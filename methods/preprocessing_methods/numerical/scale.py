@@ -15,4 +15,3 @@ class scale(object):
         self.file.write('X_val[numerical_cols] = scale(X_val[numerical_cols])\n')
         if self.separate:
             self.file.write('X_test[numerical_cols] = scale(X_test[numerical_cols])\n')
-        self.file.write('\n\n')

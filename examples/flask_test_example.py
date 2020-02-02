@@ -10,6 +10,7 @@ import pandas as pd
 import numpy as np
 
 train = pd.read_csv("datasets/iris.data", sep=",", header=None)
+test = pd.read_csv("datasets/None", sep=",", header=None)
 
 columns = train.columns
 
@@ -27,6 +28,9 @@ target_label = "None"
 drop_cols = []
 y_train = train[target_label]
 X_train = train[[x for x in train.columns if x not in [target_label]+drop_cols]]
+y_test = test[target_label]
+X_test = test[[x for x in X_train.columns]]
+
 ## Fit, val Split ##
 from sklearn.model_selection import train_test_split
 
@@ -55,6 +59,7 @@ for col in categorical_cols:
 
 	X_fit[col] = X_fit[col].apply(lambda x: freq_parser(x))
 	X_val[col] = X_val[col].apply(lambda x: freq_parser(x))
+	X_test[col] = X_test[col].apply(lambda x: freq_parser(x))
 
 
 ## Standard Scaler Method ##
@@ -65,6 +70,7 @@ scaler.fit(X_fit[numerical_cols])
 X_fit[numerical_cols] = scaler.transform(X_fit[numerical_cols])
 X_val[numerical_cols] = scaler.transform(X_val[numerical_cols])
 
+X_test[numerical_cols] = scaler.transform(X_test[numerical_cols])
 
 
 ###########################################################
@@ -105,7 +111,7 @@ df_perm.head()
 ## LightGBM ##
 import lightgbm as lgb
 
-params = {'num_leaves': 31, 'max_depth': 4, 'max_leaf_nodes': 10, 'min_sample_leaf': 20, 'first_metric_only': 1, 'n_estimators': 5000, 'num_threads': -1, 'learning_rate': 0.01, 'colsample_bytree': 0.6, 'bagging_fraction': 0.7, 'bagging_freq': 5, 'importance_type': 'gain', 'bagging_seed': 42, 'random_state': 42, 'seed': 42, 'feature_fraction_seed': 42, 'drop_seed': 42, 'data_random_seed': 42}
+params = {'num_leaves': 31, 'max_depth': 4, 'max_leaf_nodes': 10, 'min_sample_leaf': 20, 'first_metric_only': 1, 'n_estimators': 5000, 'num_threads': -1, 'learning_rate': 0.01, 'colsample_bytree': 0.6, 'bagging_fraction': 0.7, 'bagging_freq': 5, 'importance_type': 'gain', 'bagging_seed': 42, 'random_state':42, 'seed': 42, 'feature_fraction_seed': 42, 'drop_seed': 42, 'data_random_seed': 42}
 model = lgb.LGBMClassifier(**params)
 
 
@@ -127,7 +133,7 @@ counter = 1
 auc_score = 0
 iterat = 0
 list_iter = list()
-y_preds = np.zeros(X_val.shape[0])
+y_preds = np.zeros(X_test.shape[0])
 importances = np.zeros(X_fit.shape[1])
 
 for train_index, test_index in fold_strategy:
@@ -142,7 +148,7 @@ for train_index, test_index in fold_strategy:
 	iterat += it
 	list_iter.append(it)
 	importances += model.feature_importances_ / k
-	predictions = model.predict_proba(X_val)[:, 1]
+	predictions = model.predict_proba(X_test)[:, 1]
 	y_preds += predictions / k
 	counter += 1
 

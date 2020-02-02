@@ -56,7 +56,7 @@ class main(read, prepro, feature_selection, model, validation):
         self.file.write('{0}\n'.format('#' * 42 + (len_text * '#')))
         self.file.write('{0} {1} {2}\n'.format('#' * 20, text.upper(), '#' * 20))
         self.file.write('{0}\n'.format('#' * 42 + (len_text * '#')))
-        self.file.write('\n\n')
+        self.file.write('\n')
 
 
 if __name__ == '__main__':

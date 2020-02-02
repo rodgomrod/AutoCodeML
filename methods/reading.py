@@ -47,7 +47,7 @@ class read(object):
 
         if self.separate:
             self.file.write('train = pd.read_csv("{0}", sep="{2}", header={3})\n'
-            'test = pd.read_csv("{1}", sep="{2}, header={3}")\n\n'.format(self.data_path + train_path,
+            'test = pd.read_csv("{1}", sep="{2}", header={3})\n\n'.format(self.data_path + train_path,
                                                                            self.data_path + test_path,
                                                                            separator, header))
 
@@ -62,7 +62,7 @@ class read(object):
                                 '\t\tcategorical_cols.append(col)\n\n')
 
         self.file.write('numerical_cols = '
-                        '[col for col in columns if col not in categorical_cols]\n\n')
+                        '[col for col in columns if col not in categorical_cols]\n\n\n')
 
 
     def X_y_split(self, target_label='target', drop_cols=[]):

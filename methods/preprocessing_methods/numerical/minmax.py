@@ -17,4 +17,3 @@ class minmax(object):
                         'X_val[numerical_cols] = scaler.transform(X_val[numerical_cols])\n\n')
         if self.separate:
             self.file.write('X_test[numerical_cols] = scaler.transform(X_test[numerical_cols])\n')
-        self.file.write('\n\n')

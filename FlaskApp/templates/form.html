@@ -1,0 +1,21 @@
+<html>
+   <body>
+      <form action = "http://localhost:5000/result" method = "POST">
+         <p>Filename <input type = "text" name = "file_name" value="examples/flask_test_example.py" /></p>
+         <p>Data path <input type = "text" name = "data_path" value="datasets/" /></p>
+         <p>Separate <input type = "checkbox" name = "separate" value="True" /></p>
+         <p>How to transform categorical data <input type ="text" name = "how_cat" value="freq" /></p>
+         <p>How to transform numerical data <input type = "text" name = "how_num" value="standard" /></p>
+         <p>Feature selection <input type = "text" name = "how_ft_sel" value="correlation" /></p>
+         <p>Mode <input type = "text" name = "mode" value="classifier" /></p>
+         <p>Parameters <input type = "text" name = "params" value="{'num_leaves': 31, 'max_depth': 4, 'max_leaf_nodes': 10, 'min_sample_leaf': 20, 'first_metric_only': 1, 'n_estimators': 5000, 'num_threads': -1, 'learning_rate': 0.01, 'colsample_bytree': 0.6, 'bagging_fraction': 0.7, 'bagging_freq': 5, 'importance_type': 'gain', 'bagging_seed': 42, 'random_state':42, 'seed': 42, 'feature_fraction_seed': 42, 'drop_seed': 42, 'data_random_seed': 42}" /></p>
+         <p>Algorithm <input type ="text" name = "alg" value="lgb" /></p>
+         <p>Validation strategy <input type = "text" name = "how_val" value="sfk" /></p>
+         <p>Train path <input type = "text" name = "train_path" value="iris.data" /></p>
+         <p>Test path <input type = "text" name = "test_path" value="None" /></p>
+         <p>Target column<input type ="text" name = "target_label" value="None" /></p>
+         <p>Columns to drop <input type = "text" name = "drop_cols" value="[]" /></p>
+         <p><input type = "submit" value = "submit" /></p>
+      </form>
+   </body>
+</html>
