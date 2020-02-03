@@ -2,6 +2,7 @@ import os
 import subprocess
 import sys
 import platform
+import webbrowser
 
 from flask import Flask, render_template, request
 
@@ -55,14 +56,16 @@ def result():
 
 if __name__ == '__main__':
     url = "http://localhost:5000"
-    if sys.platform == 'win32':
-        os.startfile(url)
-    elif sys.platform == 'darwin':
-        subprocess.Popen(['open', url])
-    else:
-        try:
-            subprocess.Popen(['xdg-open', url])
-        except OSError:
-            print('Please open a browser on: ' + url)
+    webbrowser.open_new_tab(url)
+
+    # if sys.platform == 'win32':
+    #     os.startfile(url)
+    # elif sys.platform == 'darwin':
+    #     subprocess.Popen(['open', url])
+    # else:
+    #     try:
+    #         subprocess.Popen(['xdg-open', url])
+    #     except OSError:
+    #         print('Please open a browser on: ' + url)
 
     app.run(debug=True)

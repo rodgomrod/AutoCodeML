@@ -12,9 +12,11 @@ if system == 'Windows':
 else:
     interpreter = 'python3'
 
-## Output file ##
+'''
+## Config ##
 with open("config/test_example_conf.json", 'r') as json_conf:
     configuration = json.load(json_conf)
+'''
 
 ## Run flask app ##
 os.system('{0} FlaskApp/flask_app.py'.format(interpreter))
